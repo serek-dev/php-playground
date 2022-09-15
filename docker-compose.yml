@@ -19,6 +19,7 @@ services:
       - 9000:9000
     volumes:
       - ./public/:/app/public/
+      - ./features/:/app/features/
       - ./composer.json:/app/composer.json
 
   chrome:
