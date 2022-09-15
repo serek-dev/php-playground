@@ -31,6 +31,6 @@ class FeatureContext extends MinkContext
      */
     public function iShouldSeeHelloWorldMessage()
     {
-//        $this->assertElementContainsText('body', 'Hello world!');
+        $this->assertElementContainsText('body', 'Hello world!');
     }
 }
