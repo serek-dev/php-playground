@@ -1,0 +1,21 @@
+{
+  "name": "sebek-dev/php-playground",
+  "description": "This is a playground for articles hosted on https://sebek.dev site. Feel free to visit and contribute!",
+  "type": "project",
+  "require": {
+    "php": "^8.1",
+    "slim/psr7": "^1.5",
+    "slim/slim": "4.*"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sebastian Twaróg",
+      "email": "sebastian.twarog1989@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "scripts": {
+    "hello": "echo 'hello there'"
+  }
+}
