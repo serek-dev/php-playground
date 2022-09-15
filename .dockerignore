@@ -2,3 +2,5 @@
 !composer.json
 !composer.lock
 !public
+!features
+!behat.yml

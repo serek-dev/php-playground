@@ -4,6 +4,8 @@ services:
 
   nginx:
     image: nginx:1.11.10-alpine
+    depends_on:
+      - web
     ports:
       - 8888:80
     volumes:
@@ -18,3 +20,26 @@ services:
     volumes:
       - ./public/:/app/public/
       - ./composer.json:/app/composer.json
+
+  chrome:
+    image: selenium/node-chrome:dev
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+
+  selenium-hub:
+    image: selenium/hub:latest
+    container_name: selenium-hub
+    environment:
+      - GRID_TIMEOUT=15
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"
+
+networks:
+  app:
