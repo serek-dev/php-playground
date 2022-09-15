@@ -12,6 +12,9 @@ _down:
 	docker-compose down --remove-orphans -v
 	docker network prune -f
 
+tests_behat:
+	docker-compose exec web composer tests:behat
+
 _finish:
 	@echo ""
 	@echo "Success!"

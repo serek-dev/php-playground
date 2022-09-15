@@ -17,7 +17,7 @@
   "minimum-stability": "stable",
   "scripts": {
     "hello": "echo 'hello there'",
-    "tests:behat": "@composer install && ./vendor/bin/behat"
+    "tests:behat": "./vendor/bin/behat"
   },
   "require-dev": {
     "behat/behat": "^3.11",
