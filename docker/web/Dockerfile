@@ -13,4 +13,4 @@ RUN composer install \
     --prefer-dist
 
 COPY . .
-RUN composer --version
+RUN composer dump-autoload

@@ -1,0 +1,28 @@
+default:
+  suites:
+    default:
+      contexts:
+        - FeatureContext
+      paths:
+        - '%paths.base%/features'
+
+  extensions:
+    Behat\MinkExtension:
+      base_url: 'http://nginx:80'
+      default_session: selenium2
+      javascript_session: selenium2
+      browser_name: chrome
+      selenium2:
+        wd_host: 'http://selenium-hub:4444/wd/hub'
+        capabilities:
+          browser: chrome
+          platform: 'ANY'
+          marionette: null
+          browserName: chrome
+          version: ''
+          extra_capabilities:
+            chromeOptions:
+              args:
+                - '--start-maximized'
+
+    SensioLabs\Behat\PageObjectExtension: ~
