@@ -23,7 +23,7 @@ services:
       - ./composer.json:/app/composer.json
 
   chrome:
-    image: selenium/node-chrome:dev
+    image: selenium/node-chrome:105.0
     shm_size: 2gb
     depends_on:
       - selenium-hub
@@ -33,7 +33,7 @@ services:
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
 
   selenium-hub:
-    image: selenium/hub:latest
+    image: selenium/hub:4.4.0
     container_name: selenium-hub
     environment:
       - GRID_TIMEOUT=15
