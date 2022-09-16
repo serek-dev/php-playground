@@ -1,4 +1,5 @@
 start: _down _build _start _finish
+fast: _down _start _finish
 stop: _down
 
 _build:
