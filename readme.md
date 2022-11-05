@@ -1,9 +1,8 @@
-# sebek.dev - php playground
+# Raw PHP playground | serek.dev
 
-This repository is part of [sebek.dev](https://sebek.dev/posts/symfony/validator/conditional-validation/)
-tech blog maintained by Sebastian Twaróg.
+This repository is part of [serek.dev](https://serek.dev) tech blog and contains minimalistic PHP Slim APP, just for local experiments. 
 
-Treat is as a playground for our experiments in posts on the website.
+![Logo](https://serek.dev/wp-content/uploads/2022/11/logo-transp.png)
 
 ## Stack & Requirements
 
@@ -16,7 +15,7 @@ Treat is as a playground for our experiments in posts on the website.
 ## Development
 
 ```bash
-gtt clone https://github.com/stwarog/php-playground.git
+git clone https://github.com/serek-dev/php-playground.git
 docker-compose up --force-recreate --build
 docker-compose down --remove-orphans
 ```
