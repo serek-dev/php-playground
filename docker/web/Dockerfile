@@ -1,16 +1,17 @@
-FROM php:8.1.8-fpm-alpine
-COPY . /app
-WORKDIR /app
+FROM ubuntu/apache2
 
-COPY --from=composer:2.0 /usr/bin/composer /usr/local/bin/composer
+# Configure Apache
+COPY docker/web/app.conf /etc/apache2/sites-available
+COPY docker/web/app.conf /etc/apache2/apache2
+COPY docker/web/remoteip.conf /etc/apache2/mods-available
 
-COPY composer.json composer.json
-COPY composer.lock composer.lock
+RUN mkdir /var/www/html/public -p
+COPY public/index.html /var/www/html/public
 
-RUN composer install \
-    --no-plugins \
-    --no-scripts \
-    --prefer-dist
+# forward request and error logs to docker log collector
+RUN ln -sf /dev/stdout /var/log/apache2/access.log \
+&& ln -sf /dev/stdout /var/log/apache2/other_vhosts_access.log \
+&& ln -sf /dev/stderr /var/log/apache2/error.log
 
-COPY . .
-RUN composer --version
+RUN a2dissite 000-default && a2ensite app
+RUN a2enmod proxy proxy_fcgi rewrite actions status remoteip headers
