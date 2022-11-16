@@ -15,6 +15,14 @@ services:
     build:
       context: .
       dockerfile: ./docker/app/Dockerfile
+    expose:
+      - 9000
     volumes:
       - ./public/:/app/public/
       - ./composer.json:/app/composer.json
+      - ./docker/app/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+    networks:
+      - php-playground
+
+networks:
+  php-playground:
