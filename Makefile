@@ -1,4 +1,4 @@
-start: _down _build _start _finish
+start: _down _build _start copy_vendor _finish
 stop: _down
 
 _build:
@@ -17,3 +17,6 @@ _finish:
 	@echo "Success!"
 	@echo "Demo app is running: http://localhost:8888/"
 	@echo ""
+
+copy_vendor:
+	docker cp $$(docker-compose ps -q app):/app/vendor .
