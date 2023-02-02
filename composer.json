@@ -1,6 +1,6 @@
 {
-  "name": "sebek-dev/php-playground",
-  "description": "This is a playground for articles hosted on https://sebek.dev site. Feel free to visit and contribute!",
+  "name": "serek-dev/php-playground",
+  "description": "This is a playground for articles hosted on https://serek.dev site. Feel free to visit and contribute!",
   "type": "project",
   "require": {
     "php": "^8.1",
